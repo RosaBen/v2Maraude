@@ -13,18 +13,22 @@
 
 }
 header{
+  position: relative;
   display: flex;
   align-items: center;
   /* justify-content: center; */
   height: 5rem;
   background: var(--navbar-bg);
-  padding-left: 3rem;
+  padding: 0 1rem;
   width: 100%;
 }
 
 nav{
   display: flex;
-  gap: 3rem;
+    align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 2rem;
  
 }
 
@@ -34,23 +38,57 @@ nav img{
   border: .2rem solid var(--color-light-two);
 }
 
-.links-container{
+.desktop-links{
   display: flex;
   align-items: center;
   gap: 2rem;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .page{
   text-decoration: none;
   color: var(--color-whiteness);
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 1.2rem;
   cursor: pointer;
 }
 
 .fa-solid{
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: var(--color-light-two);
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+.mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--navbar-bg);
+  border-top: 1px solid var(--color-light-one);
+  z-index: 1000;
+}
+
+.mobile-menu .nav-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu .page {
+  font-size: 1rem;
 }
 
 .hidden {
@@ -58,61 +96,26 @@ nav img{
 }
 
 
-
-
-@media screen and (max-width: 899px){
-  nav{
-    justify-content: space-between;
-    width: 100%;
+@media screen and (min-width: 900px) {
+  .menu-button {
+    display: none;
   }
-
-.active {
-  display: block;
-}
-  .menu{
-  cursor: pointer;
-
-}
-
-.links-container{
-  margin-top: 10rem;
-  padding-top: .5rem;
-  padding-right: 2rem;
-  flex-direction: column;
-  border: .2rem solid var(--color-dark-one);
-}
-
-.page{
-  text-decoration: none;
-  color: var(--color-dark-one);
-  font-weight: bold;
-  font-size: 1rem;
   
-}
-
-.fa-solid{
-  font-size: 1rem;
-  color: var(--color-light-two);
-}
-}
-@media screen and (min-width: 320px){
-  header{
-    padding-right: 1rem;
-  }
-  nav{
-    
-align-items: center
+  .mobile-menu {
+    display: none !important;
   }
 }
 
-@media screen and (min-width: 600px){
-
-}
-
-@media screen and (min-width: 900px){
-
-}
-
-@media screen and (min-width: 1200px){
-
+@media screen and (max-width: 899px) {
+  header {
+    padding: 0 1rem;
+  }
+  
+  nav {
+    gap: 1rem;
+  }
+  
+  .desktop-links {
+    display: none;
+  }
 }
